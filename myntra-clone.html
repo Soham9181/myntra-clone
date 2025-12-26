@@ -1,0 +1,390 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Shopping Site for Fashion, Electronics, and More</title>
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">
+    <img src="class="myntraweb-sprite desktop-logo sprites-headerLogo 
+  </div>
+  
+  <button class="btn">Sign In</button>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myntra Clone</title>
+
+<!-- <link href="style.css" rel="stylesheet"> -->
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.navbar {
+  background: #ffffff;
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ff3f6c;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #282c3f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid #ff3f6c;
+}
+
+.search {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #f5f5f6;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.banner {
+  margin: 30px auto;
+  width: 90%;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.section {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #3e4152;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card p {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* footer {
+  background: #282c3f;
+  color: white;
+  padding: 40px 50px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 13px;
+  color: #ccc; */
+  .footer {
+  background: #fafbfc;
+  padding: 50px 80px;
+  font-family: Arial, sans-serif;
+  color: #696b79;
+}
+
+.footer-top {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  color: #282c3f;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.footer-col p:hover {
+  text-decoration: underline;
+}
+
+.mt {
+  margin-top: 25px;
+}
+
+.app-icons img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  margin-right: 12px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.guarantee-item img {
+  width: 48px;
+  margin-right: 15px;
+}
+
+.popular {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.popular h4 {
+  font-size: 12px;
+  color: #282c3f;
+  margin-bottom: 10px;
+}
+
+.popular p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAsQMBEQACEQEDEQH/xAAbAAEAAQUBAAAAAAAAAAAAAAAABwEDBAUGAv/EADkQAAICAQIDBgMGBAYDAAAAAAABAgMEBREGEiETMUFRYXEigZEUM1KhscEHIzJCFSRyovDxktHh/8QAGwEBAAMAAwEAAAAAAAAAAAAAAAQFBgECAwf/xAAwEQEAAgECBQIEBQQDAAAAAAAAAQIDBBEFEiExQRNRFGFxsQYygeHwI0LB8UORof/aAAwDAQACEQMRAD8AnEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRsC3OxLvAtdvv3JsC5CxPxAupgVA8SlsBZdvXomwKxuTYF6MtwPQAAAAAAAAAAAAAAFuyWyA1eqajj6dh252dNQx6lu/OT8EvNs4taKxvLtjpbJaK17o6t4l4o1K16hgWwxsaLfZYvR7pfi8/qitz62cWXkt0lfV4bjpXltHV2vC/EFeu4crOz7DNp+HJx33xfmvQn4ssZI3hUanTWwX28e7oqrN0j0Rlxy2AxbZuT2iBHHFnGmXZlTwuHrFXTVLlsy1s3OXio+Gy8/08fOnPqMnp4vC80HCpyxzXhsuDuMJalbHTNXcIZz+5tj0jf6f6v1O01vityZI6/8Ako/EOG30080dnb02PfaS2aOyrZMXugKgAAAAAAAAAAAB5k9kBiWy55qC8QIp421r/GNU+zUT30/DbjBLuts7nJ+i7l8z30mD1bc9u0dvnLV8G4fy19W8dV3Q5c2nQ9JSX5mb49XbXW+cR9k7Vx/Vlek7tN1CvV9Pi3kVLa6tP7+vxi/XyIui1c4bRFuyBqMFc2OaykPAzKcvGoy8WXPj3wVkH6Pr8vY00TExvDL3ralprbvDKstXIuvQ5dXI8d6zPDxI6bi2OGZmR3snHvqq7m/d9y+fkRNZqIw02jvKz4ZoviMvNP5ao8thGuqEK4qMY9El4HT8PXmc99++zaYoivSFmSbacZOE4tSjOPfF+DRqM+GuanJLtmxVy0mlkq8Ia9/jelqV8l9vx9oZMV038pL0a/cpI3iZpbvDBa7STpcs1nt4dNTPdHKGvgAAAAAAAAAAABYunsgOU441iWl6M6qJuOZmb11td8Y7fFL5J/Vo5rWb2ikeU/huk+J1EVntCL4RUIqMVsktti8pSKVite0N7WsViIjs3/D098a2H4Z7/VGP/EmPbPS/vH2lA1ldrxPybQziI2XCeT9lzLNLsbWPk81mO/CFnfKHz6yXtI0HDNTz19O3eFLxPT/8tfo6SzJrx6bsnKly048XKx+xazMRG8qitZtaKx3lFObmXajm352Strr5buO/9C8I/JGY1Oec2SbNzo9NXTYoxx+rFvXwexYcDycusivvEwm07sc273Z2g6rLQ9Ypz932H3eSvxVvx+T2fyK3X4dv6tfHf+fJUcW0cZ8MzHeEy0zXw8rThJKUWu5pkL5sR1jpLMi90B6AAAAAAAAAAKSfQDDn8c1H1AiHirVVq+u3ZEG3RV/Jo69OWL6te73/ACLLRYtq+pPeW34PpPQwc1u8tSTVu2/DinKzJkk+SEY83o22kZ38SUi2npf2lA1tqxy9est2Y1CiVJc28Z1S5LYSU4T/AAyXVHpiyWx3i0eHnkpF6zWe0szjPWY5Gm4eNj/A8ldtfFP+nbuj9d//ABLrXauJxVin93VB4ToZjNa94/L0hxxTNIqq5XNVVxcpzajFLxb7iVosk4tTjvHvDibxSOae0MI+jJY0mmn3M6zEWjaXE13jZIv8OtTeVossC2Td+ntQXm6n/R+jXyKH05x2nHPj7eGF4tppwaifaXbVS3SCsXgAAAAAAAAAC1bLZPYDnOLdSlpvD2TdCXLdd/KqfinLpuvZbv5HNaTktFI8pmg03xGorTx5+iJUlFKMVsktki9iIiOj6EqcjvOCdLdvDWfe18WTLavfyh3f7tyl4vX1aTjjxDLcX1XLrsdfFf8AP8hjGFTYUfqcDnsm3t7p2eDfT2PWE/HTlrELRy7t7wXiPK1+iTXwY6dr910X5v8AIncPpz54n26qvjGb09LaI726NNxDifYdczcbbaMbXKP+mXxL9Te4bc2OJWWgzetpaX+X26NeeiY23COetM4jxbpPaq//AC9vXwk+n+7b6ldr8cdMseFLxvTTl083jvCX6Xyy5WQWL33ZaAqAAAAAAAAAxch9GgT2R3/EzLc87CwovaNNbtkl4yl0X0Sf1J+ip1m/s1H4ewRy3yz56Q4wsGmVjGU5xhBbzlJRivNvohvt1lxa0ViZntCY9Nx46Zi4WDDflqrUZer/AOyjyX57TL5xqc8589ss+Zn+fo5nVsf7JqN9f9vNzR9n1MhrMXpZ7VaPR5fVw1s1eoWdliTa730RHrHVMxV5rtCeieDcd1wPiSx9Jyc5raeRLlre39q8frv9C84Xi5aTefLK8cz8+WMUf2/f/TW/xHwf5uJqcF95HsbPddV+5pdFfeJpKf8Ah7U71tgn6x/lxZOaV5sjzwlHdpvua8PU63pF6zSfLresXrNZ8po0XNefpmDnPbmupi57fi8fz3KOYmOkvnGoxejmtjnxLcQe6OHk9gAAAAAAAUl3AYlnW2KDieyI+Mb3kcT57e20JqteyS/fcudNXbFVvuE44poqbeev/bTHssXTcA6X9t1d5lsd6MP4933Oz+1fLv8AoRdXl5Kcsd5UnHNV6On9KO9vskeUHPeb8SqYxqeJ8V241eXBbyr+Gfs//pUcVwc1Iyx3j7LTheblvOKe09vq4nWZfBVFdE5OX/PqUdWm08dZlqjulL2HjW5mXTjULey2aivTzZ3x0nJaKR5eebLXDjnJbtCWKsWGPj0YlP3dMFFepq6UilYrHhgsmS2S83t3lia3pi1XR8nAfSTXPU/KS6r/AJ6nvhvyXiz30Op+G1Fcvjz9EQyjKEnGcXGUW1JPwa8C63iesPocTExvCgcz2SdwDd2nDVUfGq6cPz3/AHKrV1iuSdmI45jimtnbzES66pkVULoAAAAAAAFJdwGJYtrE34ARBxZTOjiTUIzTXPb2kfVSW5daeYnFGzfcKyRk0eOY8Rs12Lj3ZeTXj41bsuse0Irxf/o9LWisbymZs1MNJvedohLmg6TXpGm14Ne0pb8901/fJ97/AG+RTZcs5L7sBrtVbVZ5y27do+jcxr+E8kRjWVxcZV2LeE1ytHW1YvHLPaXNbTWeaPCOeLNPtwMiuM93W21Cfg0ZfPprYMk1n9Gw4bqqZ6bx38tA2kt33His3ecFaLPDqlqOXXy3WLamDXWMfN+rLzh2l5I9S3fwy/F9dGWfRx9o7z83XU19N33stFGpdDlaa8AI64+0J4+S9WxYf5e5/wA9RX9E/P2f6+5Z6XNExyT4azgfEIvT4e89Y7fOP2+zjyZ5aJJ3AGPKrhqEprbtrZTj7b7J/kVWstE5Z2YjjuSL6yYjxtDrql0IqoXQAAAAAAAAFi6HNuBpNa0DA1lwlm1SVsFsra3tLby9T1xZr4vypuk4hn0m8Y56e3j9ldG0DT9HUvsVL7WS2ldY+aW3kmMme+T8xq9fqNXO2Sens3FNXK92urPJBhkbdA5Wra90BhZeJTlUOjLojdU/CS7jpfHTJXlvG8O+PLkxX56TtLX4vDukYl3bU4SlZF7x525beyZ4U0WnpO8VSsvEtVljltbo3EK5SlzS+SJSEyYroB5sjuBi3UqUHXZCNlUltKElumjmJ27ETNZiY7w5yfBOiSye27G6K337KNjUPb29CTGsyxGy2jjesinLvH126ukoohCEK64KFUElGMVskvIjTMzO8qq1rWmbWneZZcVscOHoAAAAAAAABRrcDw60wKqtID0lsBUCjW4HlwTAp2SA9KKQHoAB5cEwPPZID0opAegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k=" alt="Myntra Logo" width="120">
+  </div>
+
+  <div class="menu">
+    <a href="#">MEN</a>
+    <a href="#">WOMEN</a>
+    <a href="#">KIDS</a>
+    <a href="#">HOME</a>
+    <a href="#">BEAUTY</a>
+    <a href="#">GENZ</a>
+    <a href="#">STUDIO</a>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="Search for products, brands and more">
+  </div>
+
+  <div class="icons">
+    <div>Profile</div>
+    <div>Wishlist</div>
+    <div>Bag</div>
+  </div>
+</div>
+
+<div class="banner">
+  <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Banner">
+</div>
+
+<div class="section">
+  <h2>DEALS OF THE DAY</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf">
+      <p>Men Casual Shirts</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f">
+      <p>Women's Dresses</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+      <p>Sports Shoes</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
+      <p>Smart Watches</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>SHOP BY CATEGORY</h2>
+  <div class="grid">
+    <div class="card"><img src="https://images.unsplash.com/photo-1520975916090-3105956dac38"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"></div>
+  </div>
+</div>
+
+<footer>
+  <footer class="footer">
+  <div class="footer-top">
+
+    <!-- ONLINE SHOPPING -->
+    <div class="footer-col">
+      <h4>ONLINE SHOPPING</h4>
+      <p>Men</p>
+      <p>Women</p>
+      <p>Kids</p>
+      <p>Home</p>
+      <p>Beauty</p>
+      <p>Genz</p>
+      <p>Gift Cards</p>
+      <p>Myntra Insider</p>
+
+      <h4 class="mt">USEFUL LINKS</h4>
+      <p>Blog</p>
+      <p>Careers</p>
+      <p>Site Map</p>
+      <p>Corporate Information</p>
+      <p>Whitehat</p>
+      <p>Cleartrip</p>
+      <p>Myntra Global</p>
+    </div>
+
+    <!-- CUSTOMER POLICIES -->
+    <div class="footer-col">
+      <h4>CUSTOMER POLICIES</h4>
+      <p>Contact Us</p>
+      <p>FAQ</p>
+      <p>T&C</p>
+      <p>Terms Of Use</p>
+      <p>Track Orders</p>
+      <p>Shipping</p>
+      <p>Cancellation</p>
+      <p>Returns</p>
+      <p>Privacy Policy</p>
+      <p>Grievance Redressal</p>
+      <p>FSSAI Food Safety</p>
+      <p>Connect App</p>
+    </div>
+
+    <!-- APP & SOCIAL -->
+    <div class="footer-col">
+      <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+
+      <div class="app-icons">
+        <img src="google-play.png" alt="Google Play">
+        <img src="app-store.png" alt="App Store">
+      </div>
+
+      <h4 class="mt">KEEP IN TOUCH</h4>
+      <div class="social-icons">
+        <img src="facebook.png">
+        <img src="twitter.png">
+        <img src="youtube.png">
+        <img src="instagram.png">
+      </div>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="footer-col guarantee">
+      <div class="guarantee-item">
+        <img src="original.png">
+        <p><b>100% ORIGINAL</b> guarantee for all products at myntra.com</p>
+      </div>
+
+      <div class="guarantee-item">
+        <img src="return.png">
+        <p><b>Return within 14days</b> of receiving your order</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- POPULAR SEARCHES -->
+  <div class="popular">
+    <h4>POPULAR SEARCHES</h4>
+    <p>
+      Makeup | Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls |
+      Blazers For Men | Handbags | Ladies Watches | Bags | Sport Shoes |
+      Reebok Shoes | Puma Shoes | Wallets | Tops | Earrings | Kurtis |
+      Nike | Smart Watches | Titan Watches | Designer Blouse | Saree |
+      Lehenga | Shoes | Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees |
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
